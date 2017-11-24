@@ -6,9 +6,13 @@ import { ApiService } from './api.service';
   template: `
     <div *ngFor="let message of apiService.messages">
       <mat-card>{{message.message}}</mat-card>
-      <br>
     </div>
-  `
+  `,
+  styles: [`
+    div {
+      margin: 5px;
+    }
+  `]
 })
 export class MessagesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
