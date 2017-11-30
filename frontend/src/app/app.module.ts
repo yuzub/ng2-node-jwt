@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { ApiService } from './api.service';
 import { MessagesComponent } from './messages.component';
 import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { UsersComponent } from './users.component';
 import { ProfileComponent } from './profile.component';
+
+import { ApiService } from './api.service';
+import { AuthService } from './auth.service';
 
 const routes = [
   { path: 'register', component: RegisterComponent },
@@ -34,7 +36,7 @@ const routes = [
     BrowserAnimationsModule,
     MatButtonModule, MatCardModule, MatToolbarModule, MatInputModule, MatListModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
